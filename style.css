@@ -1,0 +1,1404 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color:#f3b9f6;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #780b91;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px;
+
+    border: none;
+    border-radius: 20px;
+
+    background-color: #ca8ff4;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9943b3;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.envelope {
+    width: 700px;
+    min-height: 400px;
+
+    background-color: #fffafa;
+    border-radius: 10px;
+
+    padding: 40px;
+    box-sizing: border-box;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.letter p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.decorations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart,
+.star {
+    position: absolute;
+    z-index: 1;
+}
+
+.heart {
+    color: #f48fb1;
+    font-size: 35px;
+}
+
+.star {
+    color: #f6c85f;
+    font-size: 30px;
+}
+
+/* HEARTS */
+
+.h1 {
+    top: 15%;
+    left: 15%;
+}
+
+.h2 {
+    top: 25%;
+    left: 28%;
+}
+
+.h3 {
+    top: 10%;
+    right: 20%;
+}
+
+.h4 {
+    top: 35%;
+    right: 10%;
+}
+
+.h5 {
+    bottom: 25%;
+    left: 12%;
+}
+
+.h6 {
+    bottom: 15%;
+    left: 30%;
+}
+
+.h7 {
+    bottom: 20%;
+    right: 15%;
+}
+
+.h8 {
+    bottom: 35%;
+    right: 28%;
+}
+
+
+/* STARS */
+
+.s1 {
+    top: 10%;
+    left: 35%;
+}
+
+.s2 {
+    top: 20%;
+    left: 10%;
+}
+
+.s3 {
+    top: 30%;
+    left: 20%;
+}
+
+.s4 {
+    top: 12%;
+    right: 35%;
+}
+
+.s5 {
+    top: 28%;
+    right: 20%;
+}
+
+.s6 {
+    top: 40%;
+    right: 8%;
+}
+
+.s7 {
+    bottom: 12%;
+    left: 20%;
+}
+
+.s8 {
+    bottom: 30%;
+    left: 8%;
+}
+
+.s9 {
+    bottom: 15%;
+    right: 35%;
+}
+
+.s10 {
+    bottom: 30%;
+    right: 10%;
+}
+
+.heart {
+    color: #f48fb1;
+    font-size: 35px;
+    animation: floatHeart 3s ease-in-out infinite;
+}
+
+.star {
+    color: #f6c85f;
+    font-size: 30px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.4) rotate(20deg);
+        opacity: 1;
+    }
+}
+
+.h2,
+.h5,
+.h7 {
+    animation-delay: 0.5s;
+}
+
+.h3,
+.h6 {
+    animation-delay: 1s;
+}
+
+.s2,
+.s5,
+.s8 {
+    animation-delay: 0.7s;
+}
+
+.s3,
+.s6,
+.s9 {
+    animation-delay: 1.3s;
+}
+
+.index-decorations {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.welcome-card {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 50px 70px;
+
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.welcome-card h1 {
+    color: #780b91;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.small-heart {
+    font-size: 45px;
+    color: #f48fb1;
+
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.ih1 {
+    top: 15%;
+    left: 15%;
+}
+
+.ih2 {
+    top: 30%;
+    right: 15%;
+}
+
+.ih3 {
+    bottom: 20%;
+    left: 20%;
+}
+
+.ih4 {
+    bottom: 15%;
+    right: 25%;
+}
+
+.is1 {
+    top: 12%;
+    left: 35%;
+}
+
+.is2 {
+    top: 25%;
+    right: 30%;
+}
+
+.is3 {
+    bottom: 25%;
+    left: 10%;
+}
+
+.is4 {
+    bottom: 15%;
+    right: 10%;
+}
+
+.is5 {
+    top: 45%;
+    left: 8%;
+}
+
+.sad-decorations {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.cry,
+.broken-heart {
+    position: absolute;
+    font-size: 35px;
+
+    animation: sadFloat 3s ease-in-out infinite;
+}
+
+@keyframes sadFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(5deg);
+    }
+}
+
+.c1 {
+    top: 12%;
+    left: 10%;
+}
+
+.c2 {
+    top: 25%;
+    left: 25%;
+}
+
+.c3 {
+    bottom: 20%;
+    left: 12%;
+}
+
+.c4 {
+    bottom: 10%;
+    right: 20%;
+}
+
+.c5 {
+    top: 15%;
+    right: 12%;
+}
+
+.b1 {
+    top: 20%;
+    right: 25%;
+}
+
+.b2 {
+    top: 40%;
+    left: 8%;
+}
+
+.b3 {
+    bottom: 25%;
+    right: 10%;
+}
+
+.b4 {
+    bottom: 12%;
+    left: 30%;
+}
+
+.b5 {
+    top: 10%;
+    left: 45%;
+}
+
+
+
+.hello-page {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hello-page h1 {
+    opacity: 0;
+    animation: titleFadeIn 1.5s ease forwards;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hello-page {
+    animation: pageFadeIn 0.5s ease forwards;
+}
+
+.hello-page h1 {
+    opacity: 0;
+    animation: titleFadeIn 1.5s ease forwards;
+}
+
+.hello-page .envelope {
+    opacity: 0;
+    animation: envelopeFadeIn 1.2s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.hello-page button {
+    opacity: 0;
+    animation: buttonFadeIn 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes envelopeFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes buttonFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ignore-page {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    animation: pageFadeIn 0.5s ease forwards;
+}
+
+.ignore-page h1 {
+    opacity: 0;
+    animation: sadTitleFade 1.5s ease forwards;
+}
+
+.sad-message {
+    opacity: 0;
+
+    margin-top: 25px;
+    padding: 20px 30px;
+
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    animation: sadMessageFade 1.2s ease forwards;
+    animation-delay: 0.8s;
+}
+
+.ignore-page button {
+    opacity: 0;
+
+    animation: buttonFadeIn 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+@keyframes sadTitleFade {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sadMessageFade {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.images-page {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.images-page h1 {
+    color: #780b91;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.3s ease;
+
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+
+
+
+/* MEMORY PAGE DECORATIONS */
+
+.memory-decorations {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.memory-heart,
+.memory-star,
+.butterfly,
+.flower {
+    position: absolute;
+    font-size: 32px;
+
+    animation: memoryFloat 3s ease-in-out infinite;
+}
+
+.memory-heart {
+    animation: heartFloat 3s ease-in-out infinite;
+}
+
+.memory-star {
+    animation: memorySparkle 2s ease-in-out infinite;
+}
+
+.butterfly {
+    font-size: 36px;
+    animation: butterflyFloat 4s ease-in-out infinite;
+}
+
+.flower {
+    font-size: 32px;
+    animation: flowerFloat 3.5s ease-in-out infinite;
+}
+
+
+/* POSITIONS */
+
+.m1 {
+    top: 10%;
+    left: 8%;
+}
+
+.m2 {
+    top: 25%;
+    left: 20%;
+}
+
+.m3 {
+    bottom: 15%;
+    left: 8%;
+}
+
+.m4 {
+    top: 12%;
+    left: 35%;
+}
+
+.m5 {
+    top: 30%;
+    right: 10%;
+}
+
+.m6 {
+    bottom: 12%;
+    right: 25%;
+}
+
+.m7 {
+    top: 18%;
+    right: 25%;
+}
+
+.m8 {
+    bottom: 20%;
+    left: 25%;
+}
+
+.m9 {
+    top: 8%;
+    right: 8%;
+}
+
+.m10 {
+    bottom: 10%;
+    right: 8%;
+}
+
+.m11 {
+    bottom: 30%;
+    left: 12%;
+}
+
+.m12 {
+    top: 45%;
+    right: 5%;
+}
+
+.m13 {
+    top: 40%;
+    left: 5%;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes heartFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(8deg);
+    }
+
+}
+
+@keyframes memorySparkle {
+
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.5) rotate(20deg);
+        opacity: 1;
+    }
+
+}
+
+@keyframes butterflyFloat {
+
+    0%, 100% {
+        transform: translate(0, 0) rotate(-5deg);
+    }
+
+    25% {
+        transform: translate(10px, -15px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-5px, -25px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translate(15px, -10px) rotate(5deg);
+    }
+
+}
+
+@keyframes flowerFloat {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+
+}
+
+.images-page {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    padding: 40px 20px;
+
+    animation: galleryPageIn 1s ease forwards;
+}
+
+@keyframes galleryPageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.gallery a {
+    opacity: 0;
+    animation: photoAppear 0.8s ease forwards;
+}
+
+.gallery a:nth-child(1) { animation-delay: 0.1s; }
+.gallery a:nth-child(2) { animation-delay: 0.2s; }
+.gallery a:nth-child(3) { animation-delay: 0.3s; }
+.gallery a:nth-child(4) { animation-delay: 0.4s; }
+.gallery a:nth-child(5) { animation-delay: 0.5s; }
+.gallery a:nth-child(6) { animation-delay: 0.6s; }
+.gallery a:nth-child(7) { animation-delay: 0.7s; }
+.gallery a:nth-child(8) { animation-delay: 0.8s; }
+.gallery a:nth-child(9) { animation-delay: 0.9s; }
+.gallery a:nth-child(10) { animation-delay: 1s; }
+.gallery a:nth-child(11) { animation-delay: 1.1s; }
+.gallery a:nth-child(12) { animation-delay: 1.2s; }
+.gallery a:nth-child(13) { animation-delay: 1.3s; }
+.gallery a:nth-child(14) { animation-delay: 1.4s; }
+.gallery a:nth-child(15) { animation-delay: 1.5s; }
+.gallery a:nth-child(16) { animation-delay: 1.6s; }
+.gallery a:nth-child(17) { animation-delay: 1.7s; }
+.gallery a:nth-child(18) { animation-delay: 1.8s; }
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+/* INDEX ENTRANCE ANIMATION */
+
+.welcome-card {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 50px 70px;
+
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+    animation: cardEntrance 1.2s ease forwards;
+}
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.small-heart {
+    font-size: 45px;
+    color: #f48fb1;
+
+    opacity: 0;
+
+    animation:
+        heartEntrance 1s ease forwards,
+        heartbeat 1.5s ease-in-out infinite;
+
+    animation-delay: 0.3s, 1.5s;
+}
+
+@keyframes heartEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.welcome-card h1 {
+    color: #780b91;
+    font-size: 42px;
+    margin-bottom: 10px;
+
+    opacity: 0;
+
+    animation: titleEntrance 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes titleEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-card p {
+    color: #777;
+    margin-bottom: 30px;
+
+    opacity: 0;
+
+    animation: textEntrance 1s ease forwards;
+    animation-delay: 0.9s;
+}
+
+@keyframes textEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-card button {
+    opacity: 0;
+
+    animation: buttonEntrance 0.8s ease forwards;
+}
+
+.welcome-card button:nth-of-type(1) {
+    animation-delay: 1.3s;
+}
+
+.welcome-card button:nth-of-type(2) {
+    animation-delay: 1.5s;
+}
+
+@keyframes buttonEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* YES / NO BUTTONS */
+
+.yes-no-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    opacity: 0;
+
+    animation: ignoreButtonsIn 1s ease forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes ignoreButtonsIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* BACK BUTTON */
+
+.back-button {
+    opacity: 0;
+
+    animation: backButtonIn 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes backButtonIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* MAIN CONTENT FADE OUT */
+
+.fade-out {
+    animation: ignoreFadeOut 0.8s ease forwards;
+}
+
+@keyframes ignoreFadeOut {
+
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+}
+
+
+/* YES MESSAGE */
+
+#yes-message,
+#no-message {
+    display: none;
+    text-align: center;
+}
+
+#yes-message.show {
+    display: block;
+
+    animation: yesMessageIn 1s ease forwards;
+}
+
+@keyframes yesMessageIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* NO MESSAGE */
+
+#no-message.show {
+    display: block;
+
+    animation: noMessageIn 1s ease forwards;
+}
+
+@keyframes noMessageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* YES → HELLO PAGE TRANSITION */
+
+.page-transition {
+    animation: pageFadeOut 0.8s ease forwards;
+}
+
+@keyframes pageFadeOut {
+
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+
+}
+
+
+/* NO → BLACK SCREEN */
+
+.black-out {
+    animation: blackScreen 1.5s ease forwards;
+}
+
+@keyframes blackScreen {
+
+    from {
+        opacity: 1;
+        background-color: #ffeef5;
+    }
+
+    to {
+        opacity: 0;
+        background-color: black;
+    }
+
+}
+
+.yes-envelope {
+    width: 600px;
+    min-height: 150px;
+
+    margin: 20px auto;
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    background-color: #fffafa;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yes-envelope p {
+    margin: 0;
+
+    color: #777;
+    font-size: 18px;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+/* MY IMAGES PAGE */
+
+.my-images-page {
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    padding: 40px 20px;
+
+    animation: myPageIn 1s ease forwards;
+}
+
+@keyframes myPageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.my-images-page h1 {
+    color: #780b91;
+
+    animation: myTitleIn 1s ease forwards;
+}
+
+@keyframes myTitleIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.my-images-page > p {
+    color: #777;
+
+    animation: myTextIn 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes myTextIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* GALLERY */
+
+.my-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.my-gallery a {
+    opacity: 0;
+
+    animation: myPhotoIn 0.8s ease forwards;
+}
+
+.my-gallery a:nth-child(1) { animation-delay: 0.2s; }
+.my-gallery a:nth-child(2) { animation-delay: 0.3s; }
+.my-gallery a:nth-child(3) { animation-delay: 0.4s; }
+.my-gallery a:nth-child(4) { animation-delay: 0.5s; }
+.my-gallery a:nth-child(5) { animation-delay: 0.6s; }
+.my-gallery a:nth-child(6) { animation-delay: 0.7s; }
+.my-gallery a:nth-child(7) { animation-delay: 0.8s; }
+.my-gallery a:nth-child(8) { animation-delay: 0.9s; }
+.my-gallery a:nth-child(9) { animation-delay: 1s; }
+.my-gallery a:nth-child(10) { animation-delay: 1.1s; }
+.my-gallery a:nth-child(11) { animation-delay: 1.2s; }
+.my-gallery a:nth-child(12) { animation-delay: 1.3s; }
+.my-gallery a:nth-child(13) { animation-delay: 1.4s; }
+.my-gallery a:nth-child(14) { animation-delay: 1.5s; }
+.my-gallery a:nth-child(15) { animation-delay: 1.6s; }
+.my-gallery a:nth-child(16) { animation-delay: 1.7s; }
+
+@keyframes myPhotoIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.my-gallery img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.my-gallery img:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+
+/* BUTTON */
+
+.my-image-buttons {
+    margin-top: 30px;
+
+    opacity: 0;
+
+    animation: myButtonIn 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+@keyframes myButtonIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.my-images-decorations {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.my-images-decorations span {
+    position: absolute;
+}
+
+.mi1 {
+    top: 10%;
+    left: 8%;
+}
+
+.mi2 {
+    top: 30%;
+    right: 10%;
+}
+
+.mi3 {
+    bottom: 15%;
+    left: 10%;
+}
+
+.mi4 {
+    top: 15%;
+    left: 30%;
+}
+
+.mi5 {
+    top: 40%;
+    right: 8%;
+}
+
+.mi6 {
+    bottom: 15%;
+    right: 25%;
+}
+
+.mi7 {
+    top: 20%;
+    right: 25%;
+}
+
+.mi8 {
+    bottom: 20%;
+    left: 20%;
+}
+
+.mi9 {
+    top: 8%;
+    right: 8%;
+}
+
+.mi10 {
+    bottom: 10%;
+    right: 8%;
+}
+
+.mi11 {
+    top: 50%;
+    left: 5%;
+}
+
+.mi12 {
+    top: 35%;
+    right: 5%;
+}
+
+.message-envelope {
+    background: white;
+    padding: 20px 25px;
+    margin: 20px auto 30px;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.message-envelope p {
+    margin: 0;
+    color: #9943b3;
+    line-height: 1.6;
+}
